@@ -29,6 +29,7 @@ import entidades.Mensaje;
 			socketObjectIS = new ObjectInputStream(socketIS);
 			//Recibo un mensaje haciendo el cast
 			mensajito = (Mensaje) socketObjectIS.readObject();
+			//socketObjectIS.reset();
 			//Compruebo que el mensaje no es el centinela
 			while (!mensajito.getDestinatario().equals(DESTINATARIO_CENTINELA) 
 						&& !mensajito.getAsunto().equals(ASUNTO_CENTINELA)) {       //Por motivos que se me escapan, el stream lee todos los objetos
@@ -37,6 +38,7 @@ import entidades.Mensaje;
 				//Recibo un nuevo mensaje											//Si se prueba a mandar más o menos objetos, guardará todos esos
 				mensajito = null;
 				mensajito = (Mensaje) socketObjectIS.readObject();					//objetos con los mismos valores.
+				//socketObjectIS.reset();
 			}
 			//Corto la conexión
 			try {

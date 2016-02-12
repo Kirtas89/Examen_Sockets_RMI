@@ -33,7 +33,7 @@ public class ConductorEnvioMensajes {
        		clienteObjectOS.writeObject(mensajito);
        		System.out.println("Mensaje enviado 1");
        		
-        		
+       		mensajito = new Mensaje();	
 			mensajito.setDestinatario("111@111.com");
 			mensajito.setRemitente("prueba@prueba.com");
 			mensajito.setAsunto("hola soy 1");
@@ -41,7 +41,7 @@ public class ConductorEnvioMensajes {
 			clienteObjectOS.writeObject(mensajito);
 			System.out.println("Mensaje enviado 2");
 				
-				
+			mensajito = new Mensaje();	
 			mensajito.setDestinatario("hola@hola.com");
     		mensajito.setRemitente("333@333.com");
     		mensajito.setAsunto("hola soy 3");
@@ -49,7 +49,7 @@ public class ConductorEnvioMensajes {
     		clienteObjectOS.writeObject(mensajito);
     		System.out.println("Mensaje enviado 3");
 	    		
-	    		
+    		mensajito = new Mensaje();	
 			mensajito.setDestinatario("sauron@mordor.com");
     		mensajito.setRemitente("prueba@prueba.com");
     		mensajito.setAsunto("I'm watching you");
@@ -57,7 +57,7 @@ public class ConductorEnvioMensajes {
     		clienteObjectOS.writeObject(mensajito);
     		System.out.println("Mensaje enviado 4");
 	    		
-	    		
+    		mensajito = new Mensaje();	
 			mensajito.setDestinatario("venga@funciona.com");
     		mensajito.setRemitente("por@que.com");
     		mensajito.setAsunto("No deberia enviarme");
@@ -70,7 +70,7 @@ public class ConductorEnvioMensajes {
 			//la condición del bucle en el hilo nunca se comprueba y el hilo se queda a la espera de leer
 			//un nuevo objeto. Sin este bucle, este conducot acaba su ejecución y el hilo a la espera de una nueva lectura
 			//provoca una SocketException
-    		while(true) {} 
+    		//while(true) {} 
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
